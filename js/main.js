@@ -1,3 +1,12 @@
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.key === 'U')) {
+      e.preventDefault();
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     const preloader = document.getElementById("preloader");
     setTimeout(() => {
@@ -117,7 +126,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     shareButton.addEventListener("click", function () {
         let challengeText = challenges[currentChallengeIndex];
-        let whatsappURL = `https://api.whatsapp.com/send?text=تحدي اليوم: ${encodeURIComponent(challengeText)}%20%F0%9F%8E%89%20%23تحدي_رمضان`;
+        let whatsappURL = `https://api.whatsapp.com/send?text=تحدي اليوم: ${encodeURIComponent(challengeText)}%0A🎉%20%23تحدي_رمضان%0A%23سباق_الخير%0A${encodeURIComponent("https://ramadan4364.netlify.app/")}`;
+
         window.open(whatsappURL, "_blank");
     });
 });

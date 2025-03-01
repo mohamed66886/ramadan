@@ -20,6 +20,7 @@ ul{
 body{
     font-family: 'Cairo', sans-serif;
   direction: rtl;
+  overflow:hidden;
 }
 .container {
     padding-left: 15px;
@@ -95,6 +96,8 @@ header{
     left: 0;
     width: 100%;
     z-index: 999;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px;
+
 }
 .container{
     display: flex;
@@ -105,6 +108,7 @@ header{
 }
 .logo img{
     width: 166px;
+    margin: 10px 0 0 0;
 }
 .links ul{
     list-style: none;
@@ -149,13 +153,14 @@ header{
 .main .container .tah .contant{
     text-align: center;
     color: var(--main-text-color);
-    background: #d8b6b666;
+    background: #ffffff5e;
     padding: 20px;
     border-radius: 15px;
     display: flex;
     flex-wrap: wrap;
     max-width: 600px;
     justify-content: center;
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 50px 100px -20px, rgba(255, 255, 255, 0.3) 0px 30px 60px -30px;
 
 }
 .main .container .tah .contant .title img{
@@ -169,13 +174,14 @@ header{
 .main .container .tah .contant .btn{
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
 
 }
 .main .container .tah .contant button{
     padding: 2px 12px;
     border-radius: 10px;
     border: none;
-    background-color: #ece1e1;
+    background-color: #ffffff;
     color: black;
     font-size: 20px;
     cursor: pointer;
@@ -194,18 +200,20 @@ header{
 
 .time{
     margin: 20px 0;
-    background: #ff81813b;
+    background: #fff;
     text-align: center;
     border-radius: 10px;
     width: fit-content;
-    padding: 0 5px;
+    color: var(--header-color);
+    padding: 5px 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 .time p{
-    font-size: 30px !important;
+    font-size: 27px !important;
 
 }
 .time p span{
-    color: var(--text);
+    color: blueviolet;
 
     
 }
@@ -226,8 +234,14 @@ h4 a{
     text-decoration: solid underline var(--text);
 }
 
-
-
+#done-button{
+    background: #1f3a8a;
+    color: #fff;
+}
+#done-button:hover{
+    background-color: #fff;
+    color: #1f3a8a;
+}
 @media (max-width: 768px) {
 
     .links ul li h4{
@@ -251,7 +265,7 @@ h4 a{
         max-width: 382px;
     }
     .main .container .tah .contant button {
-        font-size: 12px;
+        font-size: 19px;
     }
     .main .container .tah .contant #challenge {
         font-size: 25px;
@@ -261,7 +275,13 @@ h4 a{
             font-size: 22px !important;
         }
         .main .container .tah .contant button i {
-            font-size: 13px;
+            font-size: 19px;
         }   
+        #done-button{
+            width: 100%;
+        }
+        #share-button{
+            width: 100%;
+        }
 }
   
