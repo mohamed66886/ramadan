@@ -1,0 +1,267 @@
+:root{
+    --header-color: #1E3A8A;
+    --header-text-color: #FFFFFF;
+    --main-color: #4C1D95;
+    --main-text-color: #FFFFFF;
+    --button-color: #15803D;
+ --text:#facc15;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+body{
+    font-family: 'Cairo', sans-serif;
+  direction: rtl;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+@media (min-width: 768px) {
+    .container  {
+      width: 750px;
+    }
+
+
+
+  }
+ @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  
+  }
+@media (min-width: 1200px) {
+    .container  {
+      width: 1170px;
+    }
+}
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #1e3976ab;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+}
+.loader-content {
+    text-align: center;
+}
+.loading-image {
+    width: 450px; 
+    animation: fadeInOut 2s infinite; 
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0; 
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0; 
+    }
+}
+.loader-text {
+    font-size: 34px;
+    font-weight: bold;
+    color: #fff;
+    font-family: 'Cairo', sans-serif;
+    animation: fadeInOut 2s infinite; 
+}
+
+
+header{
+    background-color: var(--header-color);
+    color: var(--header-text-color);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+.logo img{
+    width: 166px;
+}
+.links ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.links ul li{
+    cursor: pointer;
+}
+.links ul li h4{
+    font-size: 20px;
+}
+.links ul li h4 span{
+    color: var(--text);
+}
+.main{
+    height: 100vh;
+    background-image: url(../img/bac.png);
+    background-size: cover;
+    background-position: center;
+}
+.main::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1e3a8a73;
+}
+.main .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
+.main .container .tah{
+    z-index: 1;
+
+}
+.main .container .tah .contant{
+    text-align: center;
+    color: var(--main-text-color);
+    background: #d8b6b666;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 600px;
+    justify-content: center;
+
+}
+.main .container .tah .contant .title img{
+    width: 400px;
+}
+.main .container .tah .contant #challenge{
+    font-size: 40px;
+    margin-bottom: 20px;
+
+}
+.main .container .tah .contant .btn{
+    display: flex;
+    gap: 20px;
+
+}
+.main .container .tah .contant button{
+    padding: 2px 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ece1e1;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    /* font-weight: bold; */
+    font-family: 'Cairo', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+.main .container .tah .contant button:hover{
+    background-color: var(--button-color);
+    color: var(--main-text-color);
+}
+.main .container .tah .contant button i{
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.time{
+    margin: 20px 0;
+    background: #ff81813b;
+    text-align: center;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 0 5px;
+}
+.time p{
+    font-size: 30px !important;
+
+}
+.time p span{
+    color: var(--text);
+
+    
+}
+footer{
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 1;
+
+    color: var(--header-text-color);
+}
+
+h4 a{
+    color: var(--text);
+    text-decoration: solid underline var(--text);
+}
+
+
+
+@media (max-width: 768px) {
+
+    .links ul li h4{
+        font-size: 16px;
+    } 
+    .logo img{
+        width: 120px;
+    }
+    .links ul li h4 span{
+        color: var(--text);
+    }
+    
+    .loader-text {
+        font-size: 24px;
+    }
+    .loading-image {
+        width: 250px; 
+
+    }
+    .main .container .tah .contant {
+        max-width: 382px;
+    }
+    .main .container .tah .contant button {
+        font-size: 12px;
+    }
+    .main .container .tah .contant #challenge {
+        font-size: 25px;
+        }
+
+        .time p {
+            font-size: 22px !important;
+        }
+        .main .container .tah .contant button i {
+            font-size: 13px;
+        }   
+}
+  
