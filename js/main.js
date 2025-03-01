@@ -1,12 +1,3 @@
-document.addEventListener('contextmenu', function(e) {
-  e.preventDefault();
-});
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I') || (e.ctrlKey && e.key === 'U')) {
-      e.preventDefault();
-  }
-});
-
 document.addEventListener("DOMContentLoaded", function () {
     const preloader = document.getElementById("preloader");
     setTimeout(() => {
@@ -67,8 +58,13 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("currentChallengeIndex", newChallengeIndex);
         localStorage.setItem("lastChallengeDate", new Date().toDateString());
         localStorage.setItem("challengeCompleted", "false");
+
+        // حفظ وقت انتهاء التحدي بعد 24 ساعة
+        const endTime = new Date().getTime() + 24 * 60 * 60 * 1000;
+        localStorage.setItem("endTime", endTime);
+
         challengeElement.textContent = challenges[newChallengeIndex];
-        countdownElement.textContent = "00:00";
+        countdownElement.textContent = "⏳ 24:00:00";
         doneButton.disabled = false;
         doneButton.textContent = "✅ تم الإنجاز";
     }
@@ -85,23 +81,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let challengeCompleted = localStorage.getItem("challengeCompleted") === "true";
 
-   
     function startCountdown() {
-        let timeLeft = 24 * 60 * 60;
-    
+        let endTime = localStorage.getItem("endTime");
+
         function updateTimer() {
+            let now = new Date().getTime();
+            let timeLeft = endTime - now;
+
             if (timeLeft <= 0) {
                 countdownElement.textContent = "00:00:00";
                 setNewChallenge();
                 return;
             }
-            let hours = Math.floor(timeLeft / 3600);
-            let minutes = Math.floor((timeLeft % 3600) / 60);
-            let seconds = timeLeft % 60;
+
+            let hours = Math.floor(timeLeft / (1000 * 60 * 60));
+            let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
             countdownElement.textContent = `⏳ ${hours < 10 ? "0" + hours : hours}:${minutes < 10 ? "0" + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
-            timeLeft--;
             setTimeout(updateTimer, 1000);
         }
+
         updateTimer();
     }
 
@@ -130,4 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         window.open(whatsappURL, "_blank");
     });
+
+    startCountdown();
 });
