@@ -199,14 +199,16 @@ header{
 }
 
 .time{
-    margin: 20px 0;
-    text-align: center;
+    margin: 5px 0;
+    position: absolute;
+    text-align: right;
+    top: 74px;
     border-radius: 10px;
     width: fit-content;
     color: var(--header-color);
     padding: 5px 5px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-}
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
+    right: 11px;}
 .time p{
     font-size: 27px !important;
 
@@ -216,22 +218,25 @@ header{
     
 }
 .dwen{
-    background: #facd0e87;
+    background: #00000087;
     border-radius: 10px;
     padding: 5px;
+    margin: 19px 0 0;
 }
 .data{
     width: 100%;
     text-align: center;
+    font-family: 'Lateef', serif;
+
     
 }
 .day{
     display: flex;
     justify-content: center;
     gap: 10px;
+    font-size: 40px;
 }
 .day span{
-    font-size: 20px;
     font-weight: bold;
 }
 .doaaa{
@@ -307,6 +312,10 @@ h4 a{
         }
         #share-button{
             width: 100%;
+        }
+        .day{
+
+            font-size: 25px;
         }
         .doaaa{
             font-size: 25px;
