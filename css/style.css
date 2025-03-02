@@ -200,7 +200,6 @@ header{
 
 .time{
     margin: 20px 0;
-    background: #fff;
     text-align: center;
     border-radius: 10px;
     width: fit-content;
@@ -213,9 +212,35 @@ header{
 
 }
 .time p span{
-    color: blueviolet;
-
+    color: #fff;
     
+}
+.dwen{
+    background: #facd0e87;
+    border-radius: 10px;
+    padding: 5px;
+}
+.data{
+    width: 100%;
+    text-align: center;
+    
+}
+.day{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.day span{
+    font-size: 20px;
+    font-weight: bold;
+}
+.doaaa{
+    font-size: 40px;
+    margin: 2px 0;
+    width: 100%;
+    text-align: center;
+    color: blanchedalmond;
+    font-family: 'Lateef', serif;
 }
 footer{
     text-align: center;
@@ -282,6 +307,9 @@ h4 a{
         }
         #share-button{
             width: 100%;
+        }
+        .doaaa{
+            font-size: 25px;
         }
 }
   
